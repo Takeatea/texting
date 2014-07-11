@@ -31,6 +31,17 @@ abstract class AbstractTextingManager implements TextingManagerInterface
     }
 
     /**
+     * Will return the list of registered providers
+     *
+     * @return array
+     */
+    public function getProviders()
+    {
+        return $this->providers;
+    }
+
+
+    /**
      * @param string $recipient The number to send to
      * @param string $message The message to send to
      * @param string|null $providerName The provider name to use. If none is provided, it should use the first one
@@ -53,6 +64,4 @@ abstract class AbstractTextingManager implements TextingManagerInterface
 
         return $provider->send($recipient, $message);
     }
-
-
 }

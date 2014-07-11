@@ -14,6 +14,13 @@ interface TextingManagerInterface
     public function registerProvider(TextingProviderInterface $provider);
 
     /**
+     * Will return the list of registered providers
+     *
+     * @return array
+     */
+    public function getProviders();
+
+    /**
      * @param string $recipient The number to send to
      * @param string $message The message to send to
      * @param string|null $providerName The provider name to use. If none is provided, it should use the first one
