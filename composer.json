@@ -1,10 +1,9 @@
 {
-    "name": "takeatea/texting",
+    "name": "takeatea/texting-bundle",
     "type": "library",
-    "description": "Symfony Form Component",
-    "keywords": ["texting", "sms", "Take a Tea"],
+    "keywords": ["sms", "texting", "takeatea"],
     "homepage": "http://www.takeatea.com",
-    "license": "MIT",
+    "licence": "MIT",
     "authors": [
         {
             "name": "Xavier Coureau",
@@ -12,16 +11,15 @@
         }
     ],
     "require": {
-        "php": "~5.3",
-        "guzzlehttp/guzzle": "~4.0"
+        "php": ">=5.3"
     },
     "require-dev": {
         "phpunit/phpunit": "dev-master"
     },
     "autoload": {
-        "psr-4": { "TakeATea\\Component\\Texting\\": "" }
+        "psr-4": {"Takeatea\\Component\\Texting\\": "" }
     },
-    "target-dir": "TakeATea/Component/Texting",
+    "target-dir": "Takeatea/Component/Texting",
     "minimum-stability": "dev",
     "config": {
         "bin-dir": "bin"

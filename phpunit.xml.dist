@@ -7,7 +7,7 @@
          bootstrap="vendor/autoload.php"
         >
     <testsuites>
-        <testsuite name="Take A Tea Texting Component Test Suite">
+        <testsuite name="Takatea Texting Component Test Suite">
             <directory>./Tests/</directory>
         </testsuite>
     </testsuites>
@@ -16,7 +16,6 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
-                <directory>**Interface.php</directory>
                 <directory>./Tests</directory>
                 <directory>./vendor</directory>
             </exclude>

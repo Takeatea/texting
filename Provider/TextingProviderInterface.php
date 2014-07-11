@@ -1,14 +1,23 @@
 <?php
 
-namespace TakeATea\Component\Texting\Provider;
+namespace Takeatea\Component\Texting\Provider;
 
 interface TextingProviderInterface
 {
     /**
-     * @param string $recipient
-     * @param string $content
+     * Will return the provider. Ensure to make it unique
      *
-     * @return mixed
+     * @return string
      */
-    public function send($recipient, $content);
+    public function getName();
+
+    /**
+     * Will perform the message send. Will return anyhow an array with the response
+     *
+     * @param string $recipient
+     * @param string $message
+     *
+     * @return array
+     */
+    public function send($recipient, $message);
 }
