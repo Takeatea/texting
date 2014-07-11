@@ -38,13 +38,17 @@ class TextintManagerTest extends \PHPUnit_Framework_TestCase
             ->method('getName')
             ->will($this->returnValue('provider-test'));
         $this->provider->expects($this->once())
-            ->method('send');
+            ->method('getResponse')
+            ->will($this->returnValue(array()));
+        $this->provider->expects($this->once())
+            ->method('isResponseValid')
+            ->will($this->returnValue(true));
         $provider2 = $this->getMock('Takeatea\Component\Texting\Provider\TextingProviderInterface');
         $provider2->expects($this->once())
             ->method('getName')
             ->will($this->returnValue('noway-provider'));
         $provider2->expects($this->never())
-            ->method('send');
+            ->method('getResponse');
 
         $this->manager->registerProvider($this->provider);
         $this->manager->registerProvider($provider2);
@@ -69,13 +73,17 @@ class TextintManagerTest extends \PHPUnit_Framework_TestCase
             ->method('getName')
             ->will($this->returnValue('provider-test'));
         $this->provider->expects($this->never())
-            ->method('send');
+            ->method('getResponse');
         $provider2 = $this->getMock('Takeatea\Component\Texting\Provider\TextingProviderInterface');
         $provider2->expects($this->once())
             ->method('getName')
             ->will($this->returnValue('noway-provider'));
         $provider2->expects($this->once())
-            ->method('send');
+            ->method('getResponse')
+            ->will($this->returnValue(array()));
+        $provider2->expects($this->once())
+            ->method('isResponseValid')
+            ->will($this->returnValue(true));
 
         $this->manager->registerProvider($this->provider);
         $this->manager->registerProvider($provider2);

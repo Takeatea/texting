@@ -16,6 +16,10 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
+                <directory suffix="Interface.php">./</directory>
+                <directory suffix="Controller.php">./</directory>
+
+                <directory>./Exception</directory>
                 <directory>./Tests</directory>
                 <directory>./vendor</directory>
             </exclude>

@@ -2,14 +2,17 @@
 
 namespace Takeatea\Component\Texting\Provider;
 
-interface TextingProviderInterface
+class AlwaysKoProvider implements TextingProviderInterface
 {
     /**
      * Will return the provider. Ensure to make it unique
      *
      * @return string
      */
-    public function getName();
+    public function getName()
+    {
+        return '__always_ko';
+    }
 
     /**
      * Will perform the message send. Will return anyhow an array with the response
@@ -19,7 +22,10 @@ interface TextingProviderInterface
      *
      * @return array
      */
-    public function getResponse($recipient, $message);
+    public function getResponse($recipient, $message)
+    {
+        return array();
+    }
 
     /**
      * Will check if the SMS has been sent correctly
@@ -28,5 +34,9 @@ interface TextingProviderInterface
      *
      * @return bool
      */
-    public function isResponseValid($response);
+    public function isResponseValid($response)
+    {
+        return false;
+    }
+
 }

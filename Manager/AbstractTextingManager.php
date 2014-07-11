@@ -2,6 +2,7 @@
 
 namespace Takeatea\Component\Texting\Manager;
 
+use Takeatea\Component\Texting\Exception\SendingException;
 use Takeatea\Component\Texting\Provider\TextingProviderInterface;
 
 abstract class AbstractTextingManager implements TextingManagerInterface
@@ -40,15 +41,15 @@ abstract class AbstractTextingManager implements TextingManagerInterface
         return $this->providers;
     }
 
-
     /**
      * @param string $recipient The number to send to
      * @param string $message The message to send to
      * @param string|null $providerName The provider name to use. If none is provided, it should use the first one
      *
-     * @return array
-     *
      * @throws \InvalidArgumentException if the provider does not exist
+     * @throws \Takeatea\Component\Texting\Exception\SendingException if an error occured while sending the SMS
+     *
+     * @see TextingProviderInterface::isValid()
      */
     public function send($recipient, $message, $providerName = null)
     {
@@ -62,6 +63,10 @@ abstract class AbstractTextingManager implements TextingManagerInterface
             $provider = $this->providers[$providerName];
         }
 
-        return $provider->send($recipient, $message);
+        $response = $provider->getResponse($recipient, $message);
+
+        if (!$provider->isResponseValid($response)) {
+            throw new SendingException(sprintf('Invalid response : %s', json_encode($response)));
+        }
     }
 }
