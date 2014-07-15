@@ -44,7 +44,7 @@ Also, the component support multiple providers
 
     $guzzle = new GuzzleHttp\Client();
     $provider = new Takeatea\Component\Texting\Provider\AllMySmsProvider('username', 'password', $guzzle);
-    $alwaysOkProvider = new Takeatea\Component\Texting\Provider\AlwaysKoProvider();
+    $alwaysOkProvider = new Takeatea\Component\Texting\Provider\AlwaysOkProvider();
 
     $manager = new Takeatea\Component\Texting\Manager\TextingManager();
     $manager->registerProvider($alwaysOkProvider);
