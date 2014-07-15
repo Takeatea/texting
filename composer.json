@@ -14,9 +14,6 @@
         "php": ">=5.4",
         "guzzlehttp/guzzle": "4.1.*@dev"
     },
-    "require-dev": {
-        "phpunit/phpunit": "dev-master"
-    },
     "autoload": {
         "psr-4": {"Takeatea\\Component\\Texting\\": "" }
     },
