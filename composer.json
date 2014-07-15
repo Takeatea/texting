@@ -17,7 +17,6 @@
     "autoload": {
         "psr-4": {"Takeatea\\Component\\Texting\\": "" }
     },
-    "minimum-stability": "dev",
     "config": {
         "bin-dir": "bin"
     }
