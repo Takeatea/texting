@@ -1,4 +1,4 @@
-# Take a tea Texting [![Build Status](https://travis-ci.org/Takeatea/texting.svg?branch=master)](https://travis-ci.org/Takeatea/texting)
+# Take a tea Texting [![Build Status](https://travis-ci.org/Takeatea/texting.svg?branch=master)](https://travis-ci.org/Takeatea/texting) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/3de45443-71c0-49a3-8b99-83c8cc905fbf/mini.png)](https://insight.sensiolabs.com/projects/3de45443-71c0-49a3-8b99-83c8cc905fbf)
 Take a tea Texting is a component to allow you to send SMS. It ships with couple of native providers :
 - allmysms.com
 - smsenvoi.com
