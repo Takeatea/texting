@@ -1,5 +1,6 @@
 {
     "name": "takeatea/texting",
+    "description": "Library that allow SMS sending",
     "type": "library",
     "keywords": ["sms", "texting", "takeatea"],
     "homepage": "http://www.takeatea.com",
