@@ -91,5 +91,4 @@ class SmsEnvoiProvider implements TextingProviderInterface
     {
         return isset($response['success']) && 1 == $response['success'];
     }
-
 }

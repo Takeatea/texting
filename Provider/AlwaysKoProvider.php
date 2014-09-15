@@ -38,5 +38,4 @@ class AlwaysKoProvider implements TextingProviderInterface
     {
         return false;
     }
-
 }

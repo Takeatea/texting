@@ -38,5 +38,4 @@ class AlwaysOkProvider implements TextingProviderInterface
     {
         return true;
     }
-
 }
